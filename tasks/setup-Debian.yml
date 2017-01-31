@@ -1,0 +1,5 @@
+---
+- name: Install Vagrant package
+  apt:
+    deb: "/tmp/{{ vagrant_package }}"
+    state: present

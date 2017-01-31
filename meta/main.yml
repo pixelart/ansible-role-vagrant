@@ -1,0 +1,23 @@
+galaxy_info:
+  author: pixelart
+  description: Install vagrant and plugins
+  company: pixelart GmbH
+
+  license: MIT
+
+  min_ansible_version: 2.2
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  - name: Debian
+    versions:
+    - jessie
+
+  galaxy_tags:
+    - vagrant
+    - development
+    - system
+    - virtualization
+    - vm

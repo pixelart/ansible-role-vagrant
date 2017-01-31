@@ -1,0 +1,2 @@
+---
+__vagrant_package: 'vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb'

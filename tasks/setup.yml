@@ -1,0 +1,45 @@
+---
+- name: Download package checksums
+  uri:
+    url: "{{ vagrant_checksum_url }}"
+    return_content: true
+  changed_when: false
+  register: vagrant_package_checksums
+
+- name: Extract package checksum
+  set_fact:
+    vagrant_package_checksum: "{{ (item.split(' '))[0] }}"
+  with_items: "{{ vagrant_package_checksums.content.split('\n') }}"
+  when: vagrant_package in item
+
+- name: Get vagrant version if installed
+  command: dpkg-query -W vagrant
+  register: _vagrant_installed_version
+  changed_when: false
+  failed_when: false
+
+- name: Extract installed version variable
+  set_fact:
+    vagrant_installed_version: "{{ (_vagrant_installed_version.split(':'))[1] }}"
+  when: _vagrant_installed_version.rc == 0
+
+- name: Set decision to install vagrant
+  set_fact:
+    vagrant_install: "{{ vagrant_installed_version is not defined or vagrant_installed_version != vagrant_version }}"
+
+- name: Download Vagrant package
+  get_url:
+    url: "{{ vagrant_download_url }}/{{ vagrant_package }}"
+    dest: /tmp/
+    checksum: "sha256:{{ vagrant_package_checksum }}"
+  register: vagrant_download_package
+  when: "{{ vagrant_install }}"
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+  static: no
+
+- name: Delete package file
+  file:
+    dest: "/tmp/{{ vagrant_package }}"
+    state: absent
