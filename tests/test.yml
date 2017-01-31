@@ -1,5 +1,11 @@
 ---
 - hosts: localhost
   remote_user: root
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_distribution == 'Ubuntu'
+
   roles:
-    - ansible-role-vagrant
+    - role_under_test
