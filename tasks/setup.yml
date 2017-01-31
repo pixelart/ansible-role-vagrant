@@ -20,7 +20,7 @@
 
 - name: Extract installed version variable
   set_fact:
-    vagrant_installed_version: "{{ (_vagrant_installed_version.split(':'))[1] }}"
+    vagrant_installed_version: "{{ (_vagrant_installed_version.stdout.split(':'))[1] }}"
   when: _vagrant_installed_version.rc == 0
 
 - name: Set decision to install vagrant
@@ -33,10 +33,10 @@
     dest: /tmp/
     checksum: "sha256:{{ vagrant_package_checksum }}"
   register: vagrant_download_package
-  when: "{{ vagrant_install }}"
+  when: vagrant_install
 
 - include: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
+  when: ansible_os_family == 'Debian' and vagrant_install
   static: no
 
 - name: Delete package file
