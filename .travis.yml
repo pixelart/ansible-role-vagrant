@@ -42,6 +42,7 @@ script:
   - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm vagrant || true'
 
 notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
     rooms:
       secure: 00PdSTC8Osp0uyrPoQrQXC3X8J5U2dRoRBgdYtMRP2h8KxNxkCSx1C7dxHVyFbYVCUMPN1TJvCcvLuGGlQSyigPEDEKmyfA57NSiqdEqCXJvX7eSfeLoD8ITdZwMCeCVw+k70JfipSvz2zkdX1SmUkIYkY9ezkPHNxkrnA3ffGGyVDBfZzg81mU5IK8eGn0Rv7y3OieGsYabXSVpCLdZV/drC3CdT2A6nW7EoG4UR0937GgXDevOkfVc/Frfs7jRbjiFXFwWpROlCrWO+pXzjwAqe4bEhr8jkB7ouRfxldXll841+6dOVjQKnm0i85UUoipisr/hOE/lRu4BwNW6odiZoCVrJoHmc4THWtr1MJKZGpL5drS6FuPDK54BIxNk0aKvQoInSWHkWcUGieAeBqYfirsbjfNB1mFq+vp8tOyDwx9RgTypE3aAiUxuNRo0Dbj8sbgR6DcJ0MjE7n+XvsSTaALfQXZ0XGNmLjFCNXsy8cQsX7b6OpxCa/AKQlNCwXFVcx+8hzbj0LlB45Bzj/afaNvAKxE7WD/X0IdxaKcR2AECrScgwHm5PB5sg+Sf5t7bhS2Yx2BgK0sZw+w/80thODgWrRJuvXaRmFe6I88WpPy5U+wge4IBfK12vSDW8YF79Cira7K2NKeMmbIY9oPUrYSHoAl6siI4rr+YKjA=
