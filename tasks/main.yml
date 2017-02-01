@@ -11,3 +11,7 @@
 # Setup/install tasks.
 - include: setup.yml
   static: no
+
+# Configure Vagrant.
+- include: configure.yml
+  static: no

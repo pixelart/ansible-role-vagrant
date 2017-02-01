@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Add installation of vagrant plugins for given users
+
 ### Changed
 - Ignore irrelevant files on galaxy installs
 

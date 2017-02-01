@@ -16,6 +16,21 @@ Available variables are listed below, along with default values (see `defaults/m
 
 The version of Vagrant which should be installed.
 
+    vagrant_plugin_users: []
+    
+Add a list of user account names for which vagrant plugins should be installed.
+
+    vagrant_plugins: []
+
+Add a list of vagrant with a `name` and (optional) `version` to be installed for the users above. For example:
+
+    vagrant_plugins:
+      # Install a specific version of a plugin.
+      - name: vagrant-bindfs
+        version: 1.0.1
+      # Install the latest stable release of a plugin.
+      - name: vagrant-cachier
+
 ## Dependencies
 
 None.
@@ -23,8 +38,19 @@ None.
 ## Example Playbook
 
     - hosts: phpdevs
+      vars_files:
+        - vars/main.yml
       roles:
         - pixelart.vagrant
+        
+*Inside `vars/main.yml`*:
+
+    vagrant_plugin_users: ['username']
+    vagrant_plugins:
+      - name: vagrant-bindfs
+      - name: vagrant-cachier
+      - name: vagrant-hostmanager
+      - name: vagrant-vbguest
 
 After the playbook runs, `vagrant` will be accessible via normal user accounts.
 

@@ -1,0 +1,11 @@
+---
+- name: Install Vagrant plugins
+  become: true
+  become_user: "{{ item.0 }}"
+  command: >
+    vagrant plugin install {{ item.1.name }}
+    {{ (item.1.version|default('') != '')|ternary(' --plugin-version ' ~ item.1.version|default('>0'), '') }}
+  with_nested:
+    - "{{ vagrant_plugin_users }}"
+    - "{{ vagrant_plugins }}"
+  changed_when: false

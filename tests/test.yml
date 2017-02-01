@@ -2,6 +2,13 @@
 - hosts: localhost
   remote_user: root
 
+  vars:
+    # Test a vagrant plugin
+    vagrant_plugin_users: ['{{ ansible_user }}']
+    vagrant_plugins:
+      - name: vagrant-bindfs
+        version: 1.0.1
+
   pre_tasks:
     - name: Update apt cache.
       apt: update_cache=yes cache_valid_time=600
