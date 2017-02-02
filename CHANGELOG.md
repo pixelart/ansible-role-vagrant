@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add variable to define the Vagrant version to be installed
 - Test the role on Ubuntu 16.04 and Debian 8
 
-[Unreleased]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.1...HEAD
 [1.2.1]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/pixelart/ansible-role-vagrant/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/pixelart/ansible-role-vagrant/compare/1.0.0...1.1.0
