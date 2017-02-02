@@ -3,6 +3,9 @@
   remote_user: root
 
   vars:
+    # Test editing of sudoers file
+    vagrant_manage_sudoers: true
+
     # Test a vagrant plugin
     vagrant_plugin_users: ['{{ ansible_user }}']
     vagrant_plugins:

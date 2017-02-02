@@ -1,4 +1,8 @@
 ---
+- include: configure-sudoers.yml
+  static: no
+  when: vagrant_manage_sudoers and (ansible_distribution == 'Ubuntu')
+
 - name: Install Vagrant plugins
   become: true
   become_user: "{{ item.0 }}"

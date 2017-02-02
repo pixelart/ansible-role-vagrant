@@ -1,0 +1,25 @@
+---
+- name: Configure sudoers directory.
+  file:
+    path: /etc/sudoers.d
+    state: directory
+    group: root
+    owner: root
+    mode: 0755
+
+- name: Configure sudoers directory is scanned.
+  become: yes
+  lineinfile:
+    regexp: '#includedir\s+/etc/sudoers.d'
+    line: '#includedir /etc/sudoers.d'
+    dest: /etc/sudoers
+
+- name: Manage vagrant-syncedfolders sudoers file.
+  template:
+    dest: /etc/sudoers.d/vagrant-syncedfolders
+    src: 'sudoers-{{ ansible_distribution }}.j2'
+    owner: root
+    group: root
+    mode: 440
+    force: yes
+    validate: 'visudo -cf %s'

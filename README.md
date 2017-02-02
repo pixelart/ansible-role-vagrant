@@ -16,6 +16,10 @@ Available variables are listed below, along with default values (see `defaults/m
 
 The version of Vagrant which should be installed.
 
+    vagrant_manage_sudoers: false
+
+If the sudoers file should be managed for passwordless vagrant up/down if using NFS. If true, a `/etc/sudoers.d/vagrant-syncedfolders` will be created and the `#includedir /etc/sudoers.d` directive activated. This is managed only for Ubuntu now. On Ubuntu the user must be in the `sudo` group.
+
     vagrant_plugin_users: []
     
 Add a list of user account names for which vagrant plugins should be installed.
