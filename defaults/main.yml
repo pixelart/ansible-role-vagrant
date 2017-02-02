@@ -1,5 +1,6 @@
 ---
 vagrant_version: '1.9.1'
+vagrant_manage_sudoers: false
 
 # Download URL
 vagrant_download_url: 'https://releases.hashicorp.com/vagrant/{{ vagrant_version }}'
