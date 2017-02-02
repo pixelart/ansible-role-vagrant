@@ -20,6 +20,6 @@
     src: 'sudoers-{{ ansible_distribution }}.j2'
     owner: root
     group: root
-    mode: 440
+    mode: 0440
     force: yes
     validate: 'visudo -cf %s'
