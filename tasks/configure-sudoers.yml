@@ -14,10 +14,19 @@
     line: '#includedir /etc/sudoers.d'
     dest: /etc/sudoers
 
+- name: Set default sudoers template
+  set_fact:
+    vagrant_sudoers_template: 'sudoers-{{ ansible_distribution }}.j2'
+
+- name: Set sudoers template for Ubuntu and Vagrant version below 1.9.1
+  set_fact:
+    vagrant_sudoers_template: 'sudoers-{{ ansible_distribution }}-lt-1-9-1.j2'
+  when: ansible_distribution == 'Ubuntu' and vagrant_version|version_compare('1.9.1', '<')
+
 - name: Manage vagrant-syncedfolders sudoers file.
   template:
     dest: /etc/sudoers.d/vagrant-syncedfolders
-    src: 'sudoers-{{ ansible_distribution }}.j2'
+    src: '{{ vagrant_sudoers_template }}'
     owner: root
     group: root
     mode: 0440

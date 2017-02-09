@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Fixed
+- Fix managed sudoers file for changed occurred in Vagrant 1.9.1
+
 ## [1.2.1] - 2017-02-02
 ### Fixed
 - Add missing leading zero on the sudoers file permissions
