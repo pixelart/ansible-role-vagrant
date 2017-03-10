@@ -18,10 +18,10 @@
   set_fact:
     vagrant_sudoers_template: 'sudoers-{{ ansible_distribution }}.j2'
 
-- name: Set sudoers template for Ubuntu and Vagrant version below 1.9.1
+- name: Set sudoers template for Ubuntu and Vagrant version below 1.8.7
   set_fact:
-    vagrant_sudoers_template: 'sudoers-{{ ansible_distribution }}-lt-1-9-1.j2'
-  when: ansible_distribution == 'Ubuntu' and vagrant_version|version_compare('1.9.1', '<')
+    vagrant_sudoers_template: 'sudoers-{{ ansible_distribution }}-lt-1-8-7.j2'
+  when: ansible_distribution == 'Ubuntu' and vagrant_version|version_compare('1.8.7', '<')
 
 - name: Manage vagrant-syncedfolders sudoers file.
   template:
