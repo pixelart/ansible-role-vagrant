@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Changed
+- Update default Vagrant version to 1.9.4
+
 ## [1.2.3] - 2017-03-10
 ### Fixed
 - Correct old sudoers template to the right version < 1.8.7
