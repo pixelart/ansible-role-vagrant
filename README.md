@@ -12,7 +12,7 @@ Installs [Vagrant](https://www.vagrantup.com/) on Ubuntu or Debian.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    vagrant_version: '1.9.1'
+    vagrant_version: '1.9.4'
 
 The version of Vagrant which should be installed.
 
