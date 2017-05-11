@@ -26,14 +26,20 @@ Add a list of user account names for which vagrant plugins should be installed.
 
     vagrant_plugins: []
 
-Add a list of vagrant with a `name` and (optional) `version` to be installed for the users above. For example:
+Add a list of vagrant with a `name` and (optional) `version` constraint or specific version to be installed for the users above. For example:
 
-    vagrant_plugins:
-      # Install a specific version of a plugin.
-      - name: vagrant-bindfs
-        version: 1.0.1
-      # Install the latest stable release of a plugin.
-      - name: vagrant-cachier
+```yaml
+vagrant_plugins:
+  # Install a higher version than supplied by the system
+  - name: vagrant-share
+    version: '>=1.1.8'
+  # Install the latest stable release of a plugin.
+  - name: vagrant-cachier
+```
+
+    vagrant_plugins_keep_updated: false
+    
+Set to true if you want to keep the vagrant plugins installed updated. If you set this to true, only plugins without version constraint above are updated. Install with specific version and update is mutually exclusive.
 
 ## Dependencies
 

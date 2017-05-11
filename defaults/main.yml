@@ -9,3 +9,4 @@ vagrant_checksum_url: '{{ vagrant_download_url }}/vagrant_{{ vagrant_version }}_
 # Vagrant plugins
 vagrant_plugin_users: []
 vagrant_plugins: []
+vagrant_plugins_keep_updated: false

@@ -10,7 +10,9 @@
     vagrant_plugin_users: ['{{ ansible_user }}']
     vagrant_plugins:
       - name: vagrant-bindfs
-        version: 1.0.1
+      - name: vagrant-share
+        version: '>=1.1.8'
+    vagrant_plugins_keep_updated: true
 
   pre_tasks:
     - name: Update apt cache.

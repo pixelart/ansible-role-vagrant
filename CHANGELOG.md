@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+## Added
+- Keep vagrant plugins updated if configured
+
 ## [1.2.4] - 2017-05-09
 ### Changed
 - Update default Vagrant version to 1.9.4
