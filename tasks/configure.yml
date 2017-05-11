@@ -13,3 +13,14 @@
     - "{{ vagrant_plugin_users }}"
     - "{{ vagrant_plugins }}"
   changed_when: false
+
+- name: Ensure Vagrant plugins are updated (if configured)
+  become: true
+  become_user: "{{ item.0 }}"
+  command: vagrant plugin update {{ item.1.name }}
+  when: vagrant_plugins_keep_updated and item.1.version is not defined
+  register: vagrant_plugin_update
+  changed_when: '"Updated" in vagrant_plugin_update.stdout'
+  with_nested:
+    - "{{ vagrant_plugin_users }}"
+    - "{{ vagrant_plugins }}"

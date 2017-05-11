@@ -39,7 +39,7 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Ensure platform.sh CLI is installed and working.
-  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm vagrant || true'
+  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm vagrant --version'
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
