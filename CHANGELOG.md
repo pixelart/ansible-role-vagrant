@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.3.0] - 2017-05-11
-## Added
+### Added
 - Keep vagrant plugins updated if configured
 
 ## [1.2.4] - 2017-05-09
