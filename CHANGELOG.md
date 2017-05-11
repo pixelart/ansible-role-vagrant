@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.3.0] - 2017-05-11
 ## Added
 - Keep vagrant plugins updated if configured
 
@@ -41,7 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add variable to define the Vagrant version to be installed
 - Test the role on Ubuntu 16.04 and Debian 8
 
-[Unreleased]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.4...HEAD
+[Unreleased]: https://github.com/pixelart/ansible-role-vagrant/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.4...1.3.0
 [1.2.4]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/pixelart/ansible-role-vagrant/compare/1.2.1...1.2.2
